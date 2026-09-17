@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="#333232"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".HomeActivity">
+
+    <!-- Cabeçalho de Boas-Vindas -->
+    <TextView
+        android:id="@+id/txt_boas_vindas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Olá, Usuário!"
+        android:textSize="32sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bem-vindo de volta ao seu painel."
+        android:textSize="16sp"
+        android:textColor="#B3B3B3"
+        android:layout_margin="20dp"
+        />
+
+    <!-- Card de Dados do Usuário -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/borda"
+        android:padding="20dp"
+        android:layout_marginBottom="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Informações da Conta"
+            android:textSize="14sp"
+            android:textColor="#B3B3B3"
+            android:textStyle="bold"
+            android:layout_margin="20dp"/>
+
+        <TextView
+            android:id="@+id/txt_perfil_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="E-mail: usuario@email.com"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <!-- Espaço para Menu/Funcionalidades futuras -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ações Disponíveis"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_margin="20dp"/>
+
+    <Button
+        android:id="@+id/btn_perfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Editar Perfil"
+        android:padding="12dp"
+        android:backgroundTint="#706a6a"
+        android:layout_margin="20dp"
+        app:cornerRadius="5dp"/>
+
+    <Button
+        android:id="@+id/btn_configuracoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Configurações do App"
+        android:layout_margin="20dp"
+        android:backgroundTint="#706a6a"
+        app:cornerRadius="5dp"/>
+
+    <!-- Espaçador elástico para empurrar o Logoff para o fim da tela -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- Botão Sair / Logoff -->
+    <Button android:id="@+id/btn_logoff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOGOFF (SAIR)"
+        android:layout_margin="20dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#F44336"
+        app:cornerRadius="5dp"/>
+</LinearLayout>

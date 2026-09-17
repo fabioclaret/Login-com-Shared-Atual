@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="#333232"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="50dp"
+        android:text="Cadastro"
+        android:textSize="48sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <EditText android:id="@+id/cad_nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="@drawable/borda"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:hint="Informe seu nome"/>
+
+    <EditText android:id="@+id/cad_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="@drawable/borda"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="Informe seu email"/>
+
+    <EditText android:id="@+id/cad_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="@drawable/borda"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:inputType="numberPassword"
+        android:hint="Informe sua senha"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button android:id="@+id/cad_btn_voltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:text="VOLTAR"
+            android:padding="15dp"
+            android:backgroundTint="#F44336"
+            app:cornerRadius="5dp"/>
+
+        <Button android:id="@+id/cad_btn_cadastrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:text="CADASTRAR"
+            android:padding="15dp"
+            android:backgroundTint="#706a6a"
+            app:cornerRadius="5dp"/>
+    </LinearLayout>
+
+    <CheckBox android:id="@+id/cad_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lembrar minhas Credenciais"
+        android:textColor="@color/white"
+        android:buttonTint="@color/white"
+        android:layout_marginTop="15dp"/>
+
+
+
+
+</LinearLayout>
