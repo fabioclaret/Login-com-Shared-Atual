@@ -1,5 +1,5 @@
 package com.fabioclaret.logincomshared;
-
+import static androidx.core.app.ActivityCompat.finishAffinity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -15,8 +15,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private Button logoff;
-    private TextView txtBoasVindas, txtPerfilEmail;
+    private Button logoff, btnPerfil;
+    private TextView txtBoasVindas, txtPerfilEmail, txtPerfilData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +30,14 @@ public class HomeActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
 
         // 2. Busca os valores salvos (se não existirem, assume o valor padrão da direita)
-        String nomeSalvo = preferences.getString("Nome", "Usuário");
+        String nomeSalvo  = preferences.getString("Nome", "Usuário");
         String emailSalvo = preferences.getString("Email", "Não informado");
+        String dataSalva  = preferences.getString("Data", "Não informado");
 
         // 3. Coloca os valores vindos do arquivo diretamente na tela
         txtBoasVindas.setText(String.format("Olá, %s!", nomeSalvo));
         txtPerfilEmail.setText(String.format("E-mail: %s", emailSalvo));
+        txtPerfilData.setText(String.format("Ultimo acesso: %s", dataSalva));
 
         // Configuração simplificada do botão com Lambda
         logoff.setOnClickListener(v -> {
@@ -47,6 +49,10 @@ public class HomeActivity extends AppCompatActivity {
             finishAffinity();
         });
 
+        btnPerfil.setOnClickListener(v -> {
+            preferences.edit().clear().apply();
+
+        });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -58,5 +64,7 @@ public class HomeActivity extends AppCompatActivity {
         logoff         = findViewById(R.id.btn_logoff);
         txtBoasVindas  = findViewById(R.id.txt_boas_vindas);
         txtPerfilEmail = findViewById(R.id.txt_perfil_email);
+        txtPerfilData  = findViewById(R.id.perfil_data);
+        btnPerfil      = findViewById(R.id.btn_perfil);
     }
 }

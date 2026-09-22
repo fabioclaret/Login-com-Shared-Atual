@@ -44,9 +44,17 @@
             android:layout_height="wrap_content"
             android:text="Informações da Conta"
             android:textSize="14sp"
-            android:textColor="#B3B3B3"
             android:textStyle="bold"
-            android:layout_margin="20dp"/>
+            />
+
+        <TextView
+            android:id="@+id/perfil_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="#B3B3B3"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txt_perfil_email"
@@ -54,7 +62,8 @@
             android:layout_height="wrap_content"
             android:text="E-mail: usuario@email.com"
             android:textSize="16sp"
-            android:textColor="@color/white"/>
+            android:textColor="#B3B3B3"
+           />
     </LinearLayout>
 
     <!-- Espaço para Menu/Funcionalidades futuras -->
@@ -71,7 +80,7 @@
         android:id="@+id/btn_perfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Editar Perfil"
+        android:text="Limpar dados de Login"
         android:padding="12dp"
         android:backgroundTint="#706a6a"
         android:layout_margin="20dp"

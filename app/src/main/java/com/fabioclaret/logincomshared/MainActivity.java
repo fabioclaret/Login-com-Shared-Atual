@@ -26,34 +26,28 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        preferences = getSharedPreferences("login", 0);
-
-        if (preferences.contains("Nome")) {
-            Intent intent = new Intent(MainActivity.this,
-                    HomeActivity.class);
-            startActivity(intent);
-        }
-
         initComponents();
 
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (validarDados()) {
-                    if (lembrar.isChecked()) {
-                        preferences = getSharedPreferences("login", 0);
-                        SharedPreferences.Editor dados = preferences.edit();
-                        dados.putString("Nome", nome.getText().toString());
-                        dados.putString("Email", email.getText().toString());
-                        dados.putString("Senha", senha.getText().toString());
-                        dados.apply();
-                    }
+                    preferences = getSharedPreferences("login", 0);
+                    SharedPreferences.Editor dados = preferences.edit();
+                    dados.putString("Nome", nome.getText().toString());
+                    dados.putString("Email", email.getText().toString());
+                    dados.putString("Senha", senha.getText().toString());
+                    
+                    dados.putBoolean("remember", lembrar.isChecked());
+                    dados.apply();
+
                     nome.setText("");
                     email.setText("");
                     senha.setText("");
 
                     Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         });
